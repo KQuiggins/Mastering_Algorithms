@@ -14,8 +14,6 @@ function findMissingLetter(arr) {
 
     }
     return '';
-
-
 };
 // function findMissingLetter(arr) {
 //     const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
