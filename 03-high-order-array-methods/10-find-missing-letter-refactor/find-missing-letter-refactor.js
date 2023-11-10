@@ -1,19 +1,34 @@
 function findMissingLetter(arr) {
 
-    let start = arr[0].charCodeAt(0);
+    const missingCharCode = arr.filter((char, index) => {
+        if (index === 0) return false;
 
-    const missingCharCode = arr
-        .map((char) => char.charCodeAt(0))
-        .find((current) => {
-            if (current - start > 1) {
-                return true;
-            }
+        const prevCharCode = arr[index - 1].charCodeAt(0);
 
-            start = current;
-            return false;
-        })
+        const currentCharCode = char.charCodeAt(0);
 
-    return missingCharCode ? String.fromCharCode(missingCharCode - 1) : '';
+        return currentCharCode - prevCharCode > 1;
+    })[0];
+
+    return missingCharCode ? String.fromCharCode(missingCharCode.charCodeAt(0) - 1) : '';
 }
+
+// function findMissingLetter(arr) {
+
+//     let start = arr[0].charCodeAt(0);
+
+//     const missingCharCode = arr
+//         .map((char) => char.charCodeAt(0))
+//         .find((current) => {
+//             if (current - start > 1) {
+//                 return true;
+//             }
+
+//             start = current;
+//             return false;
+//         })
+
+//     return missingCharCode ? String.fromCharCode(missingCharCode - 1) : '';
+// }
 
 module.exports = findMissingLetter;
