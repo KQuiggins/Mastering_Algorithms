@@ -62,6 +62,8 @@ class HashTable {
     }
   }
 
+  
+
   // Remove a key-value pair from the hash table
   remove(key) {
     // Hash the key
@@ -92,7 +94,7 @@ class HashTable {
   has(key) {
     // Hash the key to find the index
     const index = this._hash(key, this.limit);
-    
+
     // Check if the bucket at the index exists
     if (this.storage[index]) {
       // Iterate through the bucket's key-value pairs
@@ -104,7 +106,7 @@ class HashTable {
         }
       }
     }
-    
+
     // If the key is not found, return false
     return false;
   }
@@ -126,7 +128,7 @@ class HashTable {
     this.storage = [];
   }
 
-  
+
 }
 
 module.exports = HashTable;
