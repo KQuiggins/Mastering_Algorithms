@@ -13,4 +13,8 @@ bst.insert(5)
 bst.insert(15)
 bst.insert(2)
 
+bst.remove(5)
+
+console.log(bst.lookup(10));
+
 bst.printTree()
